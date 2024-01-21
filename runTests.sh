@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 file_name=TestClass.java
 
 echo "Compiling..."
