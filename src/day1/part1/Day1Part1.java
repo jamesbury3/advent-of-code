@@ -58,9 +58,8 @@ public class Day1Part1 extends Day {
 				throw new IllegalStateException("Left or right cannot be -1 or greater than 9");
 			runningSum.getAndAdd(sum);
 		});
-
+		
+		logFinalValue(runningSum.get());
 		return runningSum.get();
 	}
-
-
 }

@@ -113,7 +113,6 @@ public class Day1Part2 extends Day {
 		});
 
 		logFinalValue(runningSum.get());
-
 		return runningSum.get();
 	}
 
