@@ -26,9 +26,11 @@ public abstract class Day {
 			return -1;
 		}
 
+		var start = System.currentTimeMillis();
 		int answer = calculate();
+		var stop = System.currentTimeMillis();
 
-		logFinalValue(answer);
+		logFinalValue(answer, start, stop);
 		return answer;
 	}
 
@@ -56,9 +58,9 @@ public abstract class Day {
 			System.out.println(getLogPrefix() + "ERROR -- " + s);
 	}
 
-	protected void logFinalValue(int i) {
+	protected void logFinalValue(int i, long start, long stop) {
 		if (printLogs)
-			System.out.println(getLogPrefix() + "FINAL_VALUE -- " + i);
+			System.out.println(getLogPrefix() + "FINAL_VALUE -- " + i + " -- Took " + (stop - start) + " milliseconds");
 	}
 
 	private String getLogPrefix() {

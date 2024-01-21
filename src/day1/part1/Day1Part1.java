@@ -54,7 +54,6 @@ public class Day1Part1 extends Day {
 			runningSum.getAndAdd(sum);
 		});
 		
-		logFinalValue(runningSum.get());
 		return runningSum.get();
 	}
 }
