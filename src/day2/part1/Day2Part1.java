@@ -4,7 +4,7 @@ import aoc.Day;
 
 public class Day2Part1 extends Day {
 
-	public int solve(String filename) {
+	public int calculate() {
 		return -1;
 	}
 }

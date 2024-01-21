@@ -6,12 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Day1Part1 extends Day {
 
-	public int solve(String filename) {
-
-		List<String> lines = readFile(filename);
-		if (lines == null) {
-			return -1;
-		}
+	public int calculate() {
 
 		AtomicInteger runningSum = new AtomicInteger();
 

@@ -10,13 +10,27 @@ public abstract class Day {
 
 	private boolean printLogs;
 	private final String WORKING_DIR;
+	protected List<String> lines;
 
 	public Day() {
 		WORKING_DIR = System.getProperty("user.dir") + "/src/";
 		printLogs = false;
 	}
 
-	public abstract int solve(String filename);
+	protected abstract int calculate();
+
+	public int solve(String filename) {
+
+		lines = readFile(filename);
+		if (lines == null) {
+			return -1;
+		}
+
+		int answer = calculate();
+
+		logFinalValue(answer);
+		return answer;
+	}
 
 	public void enableLogging() {
 		printLogs = true;

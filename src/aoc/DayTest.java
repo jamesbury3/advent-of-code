@@ -38,6 +38,7 @@ class DayTest {
 	@Test
 	public void testDay2Part1Example1() {
 		day = new Day2Part1();
+		day.enableLogging();
 		Assertions.assertEquals(8, day.solve("example1.txt"));
 	}
 }

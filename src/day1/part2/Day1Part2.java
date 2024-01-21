@@ -30,12 +30,7 @@ public class Day1Part2 extends Day {
 			.collect(Collectors.toSet());
 	}
 
-	public int solve(String filename) {
-
-		List<String> lines = readFile(filename);
-		if (lines == null) {
-			return -1;
-		}
+	public int calculate() {
 
 		AtomicInteger runningSum = new AtomicInteger();
 
