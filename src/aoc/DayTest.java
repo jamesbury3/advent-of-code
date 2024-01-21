@@ -7,7 +7,7 @@ import day1.part2.*;
 import day2.part1.*;
 import day2.part1.*;
 
-class TestClass {
+class DayTest {
 
 	Day day;
 

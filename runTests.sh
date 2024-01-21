@@ -2,7 +2,7 @@
 
 clear
 
-file_name=TestClass.java
+file_name=DayTest.java
 
 echo "Compiling..."
 javac -d bin -sourcepath src -cp .:lib/junit-platform-console-standalone-1.9.3.jar src/aoc/$file_name
