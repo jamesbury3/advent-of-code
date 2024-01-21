@@ -18,8 +18,7 @@ class TestClass {
 	@Test
 	public void testDay1Part1Input() {
 		day = new Day1Part1();
-		day.solve("input.txt");
-		Assertions.assertTrue(true, "Produces output");
+		Assertions.assertEquals(55386, day.solve("input.txt"));
 	}
 
 	@Test
@@ -31,7 +30,6 @@ class TestClass {
 	@Test
 	public void testDay1Part2Input() {
 		day = new Day1Part2();
-		day.solve("input.txt");
-		Assertions.assertTrue(true, "Produces output");
+		Assertions.assertEquals(54824, day.solve("input.txt"));
 	}
 }

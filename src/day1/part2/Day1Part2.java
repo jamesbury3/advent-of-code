@@ -21,15 +21,14 @@ public class Day1Part2 extends Day {
 		"eight", 8,
 		"nine", 9
 	);
+	Set<Character> startingLetters;
 
-	Set startingLetters = Set.of(
-		"o",
-		"t",
-		"f",
-		"s",
-		"e",
-		"n"
-	);
+	public Day1Part2() {
+		super();
+		startingLetters = numbers.keySet().stream()
+			.map(s -> s.charAt(0))
+			.collect(Collectors.toSet());
+	}
 
 	public int solve(String filename) {
 
@@ -53,7 +52,7 @@ public class Day1Part2 extends Day {
 					newNumber = Character.getNumericValue(c);
 				
 				} else {
-					if (startingLetters.contains(String.valueOf(c)) && i < line.length() - 2) {
+					if (startingLetters.contains(c) && i < line.length() - 2) {
 						List<String> potentialNumbers = numbers.keySet().stream()
 							.filter(number -> number.charAt(0) == c)
 							.collect(Collectors.toList());
@@ -115,6 +114,4 @@ public class Day1Part2 extends Day {
 		logFinalValue(runningSum.get());
 		return runningSum.get();
 	}
-
-
 }

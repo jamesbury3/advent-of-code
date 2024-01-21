@@ -8,11 +8,29 @@ import java.util.List;
 
 public abstract class Day {
 
-	private boolean printLogs = false;
-	
+	private boolean printLogs;
+	private final String WORKING_DIR;
+
+	public Day() {
+		WORKING_DIR = System.getProperty("user.dir") + "/src/";
+		printLogs = false;
+	}
+
 	public abstract int solve(String filename);
-	
-	private static String workingDir = System.getProperty("user.dir") + "/src/";
+
+	public void enableLogging() {
+		printLogs = true;
+	}
+
+	protected List<String> readFile(String filename) {
+		Path path = Paths.get(WORKING_DIR + getInputFileDir() + filename);
+        try {
+            return Files.readAllLines(path);
+        } catch (IOException ex) {
+            error(ex.toString());
+        }
+        return null;
+	}
 
 	protected void info(Object s) {
 		if (printLogs)
@@ -33,21 +51,7 @@ public abstract class Day {
 		return getClass().getName() + "::";
 	}
 
-	protected List<String> readFile(String filename) {
-		Path path = Paths.get(workingDir + getInputFileDir() + filename);
-        try {
-            return Files.readAllLines(path);
-        } catch (IOException ex) {
-            error(ex.toString());
-        }
-        return null;
-	}
-
-	public void enableLogging() {
-		printLogs = true;
-	}
-
-	protected String getInputFileDir() {
+	private String getInputFileDir() {
 		return getClass().getPackage().toString().replace("package ", "").replace(".", "/") + "/";
 	}
 }
