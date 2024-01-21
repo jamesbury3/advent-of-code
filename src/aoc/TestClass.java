@@ -1,5 +1,8 @@
+package aoc;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import day1.*;
 
 class TestClass {
 

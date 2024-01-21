@@ -1,4 +1,6 @@
-abstract class Day {
+package aoc;
+
+public abstract class Day {
 	
 	public abstract void solve();
 

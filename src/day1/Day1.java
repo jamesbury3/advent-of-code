@@ -1,6 +1,8 @@
-import day1.Node;
+package day1;
 
-class Day1 extends Day {
+import aoc.Day;
+
+public class Day1 extends Day {
 
 	public void solve() {
 		Node n = new Node();
