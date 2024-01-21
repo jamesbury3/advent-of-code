@@ -7,16 +7,20 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public abstract class Day {
+
+	private boolean printLogs = false;
 	
 	public abstract int solve(String filename);
 	private static String workingDir = System.getProperty("user.dir") + "/src/";
 
 	protected void info(Object s) {
-		System.out.println(getLogPrefix() + "INFO -- " + s);
+		if (printLogs)
+			System.out.println(getLogPrefix() + "INFO -- " + s);
 	}
 
 	protected void error(Object s) {
-		System.out.println(getLogPrefix() + "ERROR -- " + s);
+		if (printLogs)
+			System.out.println(getLogPrefix() + "ERROR -- " + s);
 	}
 
 	private String getLogPrefix() {
@@ -32,5 +36,9 @@ public abstract class Day {
             error(ex.toString());
         }
         return null;
+	}
+
+	public void enableLogging() {
+		printLogs = true;
 	}
 }

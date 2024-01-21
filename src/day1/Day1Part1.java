@@ -4,7 +4,7 @@ import aoc.Day;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Day1 extends Day {
+public class Day1Part1 extends Day {
 
 	public int solve(String filename) {
 
