@@ -1,4 +1,4 @@
-package day1;
+package day1.part2;
 
 import aoc.Day;
 import java.util.List;
@@ -33,7 +33,7 @@ public class Day1Part2 extends Day {
 
 	public int solve(String filename) {
 
-		List<String> lines = readFile("day1/" + filename);
+		List<String> lines = readFile(filename);
 		if (lines == null) {
 			return -1;
 		}
@@ -111,6 +111,8 @@ public class Day1Part2 extends Day {
 				throw new IllegalStateException("Left or right cannot be -1 or greater than 9");
 			runningSum.getAndAdd(sum);
 		});
+
+		logFinalValue(runningSum.get());
 
 		return runningSum.get();
 	}

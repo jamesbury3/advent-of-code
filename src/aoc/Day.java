@@ -11,6 +11,7 @@ public abstract class Day {
 	private boolean printLogs = false;
 	
 	public abstract int solve(String filename);
+	
 	private static String workingDir = System.getProperty("user.dir") + "/src/";
 
 	protected void info(Object s) {
@@ -23,13 +24,17 @@ public abstract class Day {
 			System.out.println(getLogPrefix() + "ERROR -- " + s);
 	}
 
+	protected void logFinalValue(int i) {
+		if (printLogs)
+			System.out.println(getLogPrefix() + "FINAL_VALUE -- " + i);
+	}
+
 	private String getLogPrefix() {
 		return getClass().getName() + "::";
 	}
 
 	protected List<String> readFile(String filename) {
-		Path path = Paths.get(workingDir + filename);
-		System.out.println(workingDir);
+		Path path = Paths.get(workingDir + getInputFileDir() + filename);
         try {
             return Files.readAllLines(path);
         } catch (IOException ex) {
@@ -40,5 +45,9 @@ public abstract class Day {
 
 	public void enableLogging() {
 		printLogs = true;
+	}
+
+	protected String getInputFileDir() {
+		return getClass().getPackage().toString().replace("package ", "").replace(".", "/") + "/";
 	}
 }

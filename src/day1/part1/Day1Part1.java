@@ -1,4 +1,4 @@
-package day1;
+package day1.part1;
 
 import aoc.Day;
 import java.util.List;
@@ -8,7 +8,7 @@ public class Day1Part1 extends Day {
 
 	public int solve(String filename) {
 
-		List<String> lines = readFile("day1/" + filename);
+		List<String> lines = readFile(filename);
 		if (lines == null) {
 			return -1;
 		}
